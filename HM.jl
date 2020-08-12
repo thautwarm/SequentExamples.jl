@@ -166,7 +166,7 @@ sr_let = @sequent SLET begin
         isempty(FV) ?
         texp :
         let vs = map(FV) do i
-                v = gensym("a$i")
+                v = Symbol("'a", i)
                 TC.unify(Var(Refvar(i)), Fresh(v))
                 v
             end
