@@ -32,7 +32,7 @@ end
 
 
 Usage:
-```
+```julia
 ex, t = (TC, σ₀) ⊢ₛ quote
     x = function (x, y)
         x
