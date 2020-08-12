@@ -1,0 +1,3 @@
+[deps]
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+SequentExamples = "ad14a6a2-213e-4da2-a0e0-035df608f96d"
