@@ -1,6 +1,26 @@
 # SequentExamples
 
-[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://thautwarm.github.io/SequentExamples.jl/stable)
-[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://thautwarm.github.io/SequentExamples.jl/dev)
-[![Build Status](https://travis-ci.com/thautwarm/SequentExamples.jl.svg?branch=master)](https://travis-ci.com/thautwarm/SequentExamples.jl)
-[![Coverage](https://codecov.io/gh/thautwarm/SequentExamples.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/thautwarm/SequentExamples.jl)
+- `TypeExpression.jl`
+
+An example shows how to describe parsing's semantics.
+
+```julia
+tr_arrow = @sequent TARROW begin
+    σ ⊢ₜ f => T(ft)
+    σ ⊢ₜ arg => T(argt)
+    σ ⊢ₜ :($f ↦ $arg) => T(ft ↦ argt)
+end
+```
+
+- `HM.jl`
+
+An implementation of Damas-Hindley-Milner type system with syntax-directed INST and GEN.
+
+```julia
+er_sym = @sequent ESYM begin
+    (TC, σ) ⊢ₑ e::Symbol =>
+        let t = σ[e]
+            :($e :: $t), t
+        end
+end
+```
